@@ -42,7 +42,22 @@ with 2 files :
   </html>
   ```
 
-2. `config.yml`:
+2. `package.json`
+
+  You need to configure the `source` and `assets` folders.
+
+  _Note: PHENOMIC_SOURCE & ASSETS_FOLDER need to be the same un your `package.json` and `config.yml`._
+
+  Let's say `PHENOMIC_SOURCE` = content and `ASSETS_FOLDER` = content/assets
+
+  ```json
+  "phenomic": {
+     "source": "{PHENOMIC_SOURCE}",
+     "assets": "{ASSETS_FOLDER}",
+  }
+  ```
+
+3. `config.yml`:
   _Note: PHENOMIC_SOURCE & ASSETS_FOLDER are configurable in your `package.json`.
   Replace those in the section below_
 
@@ -52,8 +67,8 @@ with 2 files :
     repo: {YOUR_GIT_REPO} # owner/repo
     branch: {YOUR_BRANCH} # master
 
-  public_folder: "{PHENOMIC_SOURCE}"
-  media_folder: "{PHENOMIC_SOURCE}/{ASSETS_FOLDER}"
+  public_folder: "{PHENOMIC_SOURCE}"                # content
+  media_folder: "{PHENOMIC_SOURCE}/{ASSETS_FOLDER}" # content/assets
 
   collections:
     - name: "post"
